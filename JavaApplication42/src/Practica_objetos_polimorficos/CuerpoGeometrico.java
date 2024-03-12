@@ -70,8 +70,20 @@ public abstract class CuerpoGeometrico {
         }while(altura<0);
         
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("CuerpoGeometrico: ");
+        sb.append("color: ").append(color);
+        sb.append(" altura: ").append(altura);
+        return sb.toString();
+    }
+    
     
     public abstract double area();
     
     public abstract double volumen();
+    
+    
 }

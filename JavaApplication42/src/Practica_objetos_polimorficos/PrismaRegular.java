@@ -30,7 +30,10 @@ public abstract class PrismaRegular extends CuerpoGeometrico{
     @Override
     public abstract double volumen();
     
+    
+    @Override
     public void leer(){
+        super.leer();
         Scanner sc = new Scanner(System.in);
         double n;
         do{
@@ -43,5 +46,16 @@ public abstract class PrismaRegular extends CuerpoGeometrico{
         }while(n<0);
         this.lado = n;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString());
+        sb.append("PrismaRegular: ");
+        sb.append("Tamaño del lado: ").append(lado);
+        return sb.toString();
+    }
+    
+    
     
 }
