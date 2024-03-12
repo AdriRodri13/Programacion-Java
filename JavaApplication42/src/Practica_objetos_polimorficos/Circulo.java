@@ -12,6 +12,10 @@ public class Circulo {
     public Circulo(double radio){
         this.radio=radio;
     }
+    
+    public Circulo(Circulo circulo){
+        this.radio=circulo.radio;
+    }
 
     public double getRadio() {
         return radio;
