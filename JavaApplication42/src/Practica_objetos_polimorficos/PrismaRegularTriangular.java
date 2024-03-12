@@ -11,17 +11,15 @@ public class PrismaRegularTriangular extends PrismaRegular{
     public PrismaRegularTriangular(Colores color, double altura, double lado) {
         super(color, altura, lado);
     }
-    
-    
 
     @Override
     public double area() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.getLado()*(Math.sqrt(3)/2*this.getLado()+3*this.getAltura());
     }
 
     @Override
     public double volumen() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return Math.sqrt(3)/4 * Math.pow(this.getLado(), 2)*this.getAltura();
     }
 
     @Override

@@ -1,13 +1,35 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Practica_objetos_polimorficos;
 
-/**
- *
- * @author Admin
- */
-public class Cono {
+
+public class Cono extends CuerpoGeometricoCircular{
+
+    public Cono() {
+    }
+
+    public Cono(Colores color, double altura, Circulo circuloBase, double generatriz) {
+        super(color, altura, circuloBase, generatriz);
+    }
+    
+
+    @Override
+    public double area() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public double volumen() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString());
+        sb.append("Cono: ");
+        return sb.toString();
+    }
+    
+    
     
 }
