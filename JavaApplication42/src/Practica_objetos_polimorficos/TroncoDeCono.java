@@ -1,13 +1,13 @@
-
 package Practica_objetos_polimorficos;
 
+import java.util.Objects;
 
-public class TroncoDeCono extends Cono{
-    
+public class TroncoDeCono extends Cono {
+
     private Circulo circuloMenor;
-    
-    public TroncoDeCono(){
-        
+
+    public TroncoDeCono() {
+
     }
 
     public TroncoDeCono(Colores color, double altura, Circulo circuloBase, double generatriz, Circulo circuloMenor) {
@@ -22,20 +22,18 @@ public class TroncoDeCono extends Cono{
     public void setCirculoMenor(Circulo circuloMenor) {
         this.circuloMenor = circuloMenor;
     }
-    
+
     @Override
     public double area() {
-        return Math.PI*(Math.pow(this.getCirculoBase().getRadio(), 2)+Math.pow(this.getCirculoMenor().getRadio(), 2)+
-                this.getGeneratriz()*(this.getCirculoBase().getRadio()+this.getCirculoMenor().getRadio()));
-    } 
+        return Math.PI * (Math.pow(this.getCirculoBase().getRadio(), 2) + Math.pow(this.getCirculoMenor().getRadio(), 2)
+                + this.getGeneratriz() * (this.getCirculoBase().getRadio() + this.getCirculoMenor().getRadio()));
+    }
 
     @Override
     public double volumen() {
-        return this.getAltura()*Math.PI/3*(Math.pow(this.getCirculoBase().getRadio(), 2)+Math.pow(this.getCirculoMenor().getRadio(), 2)
-                +this.getCirculoBase().getRadio()*this.getCirculoMenor().getRadio());
+        return this.getAltura() * Math.PI / 3 * (Math.pow(this.getCirculoBase().getRadio(), 2) + Math.pow(this.getCirculoMenor().getRadio(), 2)
+                + this.getCirculoBase().getRadio() * this.getCirculoMenor().getRadio());
     }
-
-    
 
     @Override
     public String toString() {
@@ -46,10 +44,31 @@ public class TroncoDeCono extends Cono{
         return sb.toString();
     }
 
-    
-    
-    
-    
-    
-    
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 97 * hash + Objects.hashCode(this.circuloMenor);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (super.equals(obj)) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj == null) {
+                return false;
+            }
+            if (getClass() != obj.getClass()) {
+                return false;
+            }
+            final TroncoDeCono other = (TroncoDeCono) obj;
+            return Objects.equals(this.circuloMenor, other.circuloMenor);
+        } else {
+            return false;
+        }
+
+    }
+
 }

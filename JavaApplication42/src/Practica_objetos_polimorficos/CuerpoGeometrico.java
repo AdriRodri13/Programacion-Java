@@ -1,6 +1,7 @@
 
 package Practica_objetos_polimorficos;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 
@@ -85,6 +86,34 @@ public abstract class CuerpoGeometrico {
     public abstract double area();
     
     public abstract double volumen();
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + Objects.hashCode(this.color);
+        hash = 89 * hash + (int) (Double.doubleToLongBits(this.altura) ^ (Double.doubleToLongBits(this.altura) >>> 32));
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final CuerpoGeometrico other = (CuerpoGeometrico) obj;
+        if (Double.doubleToLongBits(this.altura) != Double.doubleToLongBits(other.altura)) {
+            return false;
+        }
+        return this.color == other.color;
+    }
+
+    
     
     
 }

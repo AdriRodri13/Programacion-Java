@@ -29,21 +29,28 @@ public class CodigoEjecutable {
     
     public static void nuevoCuerpoGeometrico(){
         int n, contador=0;
+        CuerpoGeometrico c=null;
         do{
             menu.nuevoCuerpo();
             n = menu.selecNuevoCuerpo();
             
             switch (n){
-                case(1) -> crearPrismaTriangular();
-                case(2) -> crearPrismaCuadrangular();
-                case(3) -> crearCilindroRecto();
-                case(4) -> crearCilindroOblicuo();
-                case(5) -> crearCono();
-                case(6) -> crearTroncoDeCono();
+                case(1) -> c = crearPrismaTriangular();
+                case(2) -> c = crearPrismaCuadrangular();
+                case(3) -> c = crearCilindroRecto();
+                case(4) -> c = crearCilindroOblicuo();
+                case(5) -> c = crearCono();
+                case(6) -> c = crearTroncoDeCono();
             }
             contador++;
         }while(n!=0 && contador == 0);
-        
+        if(!cuerpos.contains(c)){
+            cuerpos.add(c);
+            System.out.println(cuerpos);
+        }else{
+            System.out.println("====ESTE CUERPO YA EXISTE====");
+            
+        }
     }
     
     public static PrismaRegularTriangular crearPrismaTriangular(){
@@ -151,6 +158,8 @@ public class CodigoEjecutable {
         }while(!b);
         return g;
     }
+    
+    
     
     
     

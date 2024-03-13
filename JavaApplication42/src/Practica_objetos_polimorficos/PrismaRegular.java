@@ -1,17 +1,15 @@
-
 package Practica_objetos_polimorficos;
 
 import java.util.Scanner;
 
+public abstract class PrismaRegular extends CuerpoGeometrico {
 
-public abstract class PrismaRegular extends CuerpoGeometrico{
-    
     private double lado;
 
     public PrismaRegular() {
     }
 
-    public PrismaRegular(Colores color, double altura,double lado) {
+    public PrismaRegular(Colores color, double altura, double lado) {
         super(color, altura);
         this.lado = lado;
     }
@@ -23,27 +21,26 @@ public abstract class PrismaRegular extends CuerpoGeometrico{
     public void setLado(double lado) {
         this.lado = lado;
     }
-    
+
     @Override
     public abstract double area();
 
     @Override
     public abstract double volumen();
-    
-    
+
     @Override
-    public void leer(){
+    public void leer() {
         super.leer();
         Scanner sc = new Scanner(System.in);
         double n;
-        do{
+        do {
             System.out.println("Introduce el valor del lado: ");
             System.out.print("-> ");
             n = sc.nextDouble();
-            if(n<0){
+            if (n < 0) {
                 System.out.println("Introduce el valor valido (>0)");
             }
-        }while(n<0);
+        } while (n < 0);
         this.lado = n;
     }
 
@@ -55,7 +52,32 @@ public abstract class PrismaRegular extends CuerpoGeometrico{
         sb.append("Tamaño del lado: ").append(lado);
         return sb.toString();
     }
-    
-    
-    
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.lado) ^ (Double.doubleToLongBits(this.lado) >>> 32));
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (super.equals(obj)) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj == null) {
+                return false;
+            }
+            if (getClass() != obj.getClass()) {
+                return false;
+            }
+            final PrismaRegular other = (PrismaRegular) obj;
+            return Double.doubleToLongBits(this.lado) == Double.doubleToLongBits(other.lado);
+        } else {
+            return false;
+        }
+
+    }
+
 }
