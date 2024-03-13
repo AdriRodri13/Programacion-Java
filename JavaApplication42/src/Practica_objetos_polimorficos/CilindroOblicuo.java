@@ -11,14 +11,25 @@ public class CilindroOblicuo extends Cilindro{
         super(color, altura, circuloBase, generatriz);
     }
     
+    
+    //He utilizado otra formula a la que proporcionas ya que segun la pagina 
+    //https://www.problemasyecuaciones.com/geometria3D/cilindro/calculadora-area-volumen-formulas-ejemplos-problemas.html
+    //La formula correcta es: 2*PI*R*(R+generatriz), no 2*PI*R*generatriz que es la que proporcionas, con esta formula
+    //el resultado me da bien, con la tuya no (Obviamente es posible que yo lo tenga mal)
+    
+    //@Override
+    // public double area(){
+    //     return 2*Math.PI*this.getCirucloBase().getRadio()*this.getGeneratriz;
+    //}
+    
     @Override
     public double area() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return 2*Math.PI*this.getCirculoBase().getRadio()*(this.getCirculoBase().getRadio()+this.getGeneratriz());
     }
 
     @Override
     public double volumen() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.getCirculoBase().calcularArea()*this.getAltura();
     }
 
     @Override

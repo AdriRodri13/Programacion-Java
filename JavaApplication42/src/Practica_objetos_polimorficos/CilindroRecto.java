@@ -32,12 +32,12 @@ public class CilindroRecto extends Cilindro{
     
     @Override
     public double area() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return 2*Math.PI*this.getCirculoBase().getRadio()*this.getAltura() + 2*this.getCirculoBase().calcularArea();
     }
 
     @Override
     public double volumen() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.getCirculoBase().calcularArea()*this.getAltura();
     }
 
     @Override

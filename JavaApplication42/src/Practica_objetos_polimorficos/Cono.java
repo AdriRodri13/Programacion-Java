@@ -14,12 +14,13 @@ public class Cono extends CuerpoGeometricoCircular{
 
     @Override
     public double area() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.getCirculoBase().calcularArea()+Math.PI*this.getCirculoBase().getRadio()*this.getGeneratriz();
     }
 
     @Override
     public double volumen() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        double tercio = 1.0/3.0;
+        return this.getCirculoBase().calcularArea()*tercio*this.getAltura();
     }
 
     @Override

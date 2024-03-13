@@ -9,7 +9,7 @@ public abstract class Cilindro extends CuerpoGeometricoCircular{
     }
     
     public Cilindro(Circulo circuloBase, Colores color, double altura) {
-        super(circuloBase, color, altura);
+        super(color, altura, circuloBase);
     }
 
     public Cilindro(Colores color, double altura, Circulo circuloBase, double generatriz) {

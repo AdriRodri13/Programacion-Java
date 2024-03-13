@@ -11,7 +11,7 @@ public abstract class CuerpoGeometricoCircular extends CuerpoGeometrico{
         
     }
 
-    public CuerpoGeometricoCircular(Circulo circuloBase, Colores color, double altura) {
+    public CuerpoGeometricoCircular(Colores color, double altura, Circulo circuloBase) {
         super(color, altura);
         this.circuloBase = new Circulo(circuloBase);
     }

@@ -23,16 +23,20 @@ public class TroncoDeCono extends Cono{
         this.circuloMenor = circuloMenor;
     }
     
+    @Override
+    public double area() {
+        return this.getCirculoBase().calcularArea()+this.circuloMenor.calcularArea()
+                +Math.PI*(this.getCirculoBase().calcularArea()+this.circuloMenor.calcularArea())
+                *this.getGeneratriz();
+    } 
 
     @Override
     public double volumen() {
-        return super.volumen(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        double tercio = 1/3;
+        return tercio*Math.PI*this.getAltura()*(Math.pow(this.getCirculoBase().getRadio(), 2))
     }
 
-    @Override
-    public double area() {
-        return super.area(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
-    }
+    
 
     @Override
     public String toString() {
