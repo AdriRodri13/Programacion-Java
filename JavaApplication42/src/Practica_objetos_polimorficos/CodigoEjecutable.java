@@ -21,23 +21,28 @@ public class CodigoEjecutable {
             menu.mostrar();
             n = menu.leer();
             
-//            switch (n){
-//                case(1) -> 
-//            }
+            switch (n){
+                case(1) -> nuevoCuerpoGeometrico();
+            }
         }while(n!=0);
     }
     
     public static void nuevoCuerpoGeometrico(){
-        int n;
+        int n, contador=0;
         do{
-            
             menu.nuevoCuerpo();
             n = menu.selecNuevoCuerpo();
             
-//            switch (n){
-//                case(1) -> 
-//            }
-        }while(n!=0);
+            switch (n){
+                case(1) -> crearPrismaTriangular();
+                case(2) -> crearPrismaCuadrangular();
+                case(3) -> crearCilindroRecto();
+                case(4) -> crearCilindroOblicuo();
+                case(5) -> crearCono();
+                case(6) -> crearTroncoDeCono();
+            }
+            contador++;
+        }while(n!=0 && contador == 0);
         
     }
     
@@ -55,12 +60,67 @@ public class CodigoEjecutable {
         return t;
     }
     
+    public static CilindroRecto crearCilindroRecto(){
+        System.out.println("\n=====Has decidido Crear un Cilindro Recto=====");
+        CilindroRecto c = new CilindroRecto();
+        c.leer();
+        Circulo circuloBase = crearCirculo();
+        c.setCirculoBase(circuloBase);
+        c.setGeneratriz(leerGeneratriz(c.getAltura()));
+        
+        return c;
+    }
+    
+    public static CilindroOblicuo crearCilindroOblicuo(){
+        System.out.println("\n=====Has decidido Crear un Cilindro Oblicuo=====");
+        CilindroOblicuo c = new CilindroOblicuo();
+        c.leer();
+        Circulo circuloBase = crearCirculo();
+        c.setCirculoBase(circuloBase);
+        c.setGeneratriz(leerGeneratriz(c.getAltura()));
+        
+        return c;
+    }
+    
+    public static Cono crearCono(){
+        System.out.println("\n=====Has decidido Crear un Cono=====");
+        Cono c = new Cono();
+        c.leer();
+        Circulo circuloBase = crearCirculo();
+        c.setCirculoBase(circuloBase);
+        c.setGeneratriz(leerGeneratriz(c.getAltura()));
+        
+        return c;
+    }
+    
+    public static TroncoDeCono crearTroncoDeCono(){
+        System.out.println("\n=====Has decidido Crear un Tronco De Cono=====");
+        TroncoDeCono c = new TroncoDeCono();
+        c.leer();
+        System.out.println("====Creamos el circulo base====");
+        Circulo circuloBase = crearCirculo();
+        System.out.println("====Creamos el circulo pequeño====");
+        Circulo circuloPequeño;
+        do{
+            circuloPequeño = crearCirculo();
+            if(circuloPequeño.getRadio()>circuloBase.getRadio()){
+                System.out.println("El radio del circulo pequeño OBVIAMENTE debe de ser menor que el del circulo base");
+            }
+        }while(circuloPequeño.getRadio()>circuloBase.getRadio());
+        
+        c.setCirculoBase(circuloBase);
+        c.setCirculoMenor(circuloPequeño);
+        c.setGeneratriz(leerGeneratriz(c.getAltura()));
+        
+        return c;
+    }
+    
     public static Circulo crearCirculo(){
         System.out.println("\n===Hay que crear un circulo para el objeto que estás creando===");
         double n;
         System.out.println("Introduce el radio del circulo: ");
         do{
-            System.out.println("-> ");
+            System.out.print("-> ");
             n=sc.nextDouble();
             if(n<0){
                 System.out.println("Introduce un valor valido (>0)");
@@ -90,36 +150,6 @@ public class CodigoEjecutable {
             }
         }while(!b);
         return g;
-    }
-    
-    public static CilindroRecto crearCilindroRecto(){
-        System.out.println("\n=====Has decidido Crear un Cilindro Recto=====");
-        CilindroRecto c = new CilindroRecto();
-        c.leer();
-        Circulo circuloBase = crearCirculo();
-        c.setCirculoBase(circuloBase);
-        c.setGeneratriz(leerGeneratriz(c.getAltura()));
-        
-        return c;
-    }
-    
-    public static CilindroOblicuo crearCilindroOblicuo(){
-        System.out.println("\n=====Has decidido Crear un Cilindro Oblicuo=====");
-        CilindroOblicuo c = new CilindroOblicuo();
-        c.leer();
-        Circulo circuloBase = crearCirculo();
-        c.setCirculoBase(circuloBase);
-        c.setGeneratriz(leerGeneratriz(c.getAltura()));
-        
-        return c;
-    }
-    
-    public static Cono crearCono(){
-        
-    }
-    
-    public static TroncoDeCono crearTroncoDeCono(){
-        
     }
     
     

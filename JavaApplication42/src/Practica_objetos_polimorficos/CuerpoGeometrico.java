@@ -62,7 +62,8 @@ public abstract class CuerpoGeometrico {
 //        }
 
         do{
-            System.out.print("Introduce la altura del poligono: ");
+            System.out.println("Introduce la altura del poligono ");
+            System.out.print("-> ");
             this.altura = sc.nextDouble();
             if(altura < 0){
                 System.out.println("Introduce una altura valida (>0)");
