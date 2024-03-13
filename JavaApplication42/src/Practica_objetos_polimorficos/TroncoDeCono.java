@@ -25,15 +25,14 @@ public class TroncoDeCono extends Cono{
     
     @Override
     public double area() {
-        return this.getCirculoBase().calcularArea()+this.circuloMenor.calcularArea()
-                +Math.PI*(this.getCirculoBase().calcularArea()+this.circuloMenor.calcularArea())
-                *this.getGeneratriz();
+        return Math.PI*(Math.pow(this.getCirculoBase().getRadio(), 2)+Math.pow(this.getCirculoMenor().getRadio(), 2)+
+                this.getGeneratriz()*(this.getCirculoBase().getRadio()+this.getCirculoMenor().getRadio()));
     } 
 
     @Override
     public double volumen() {
-        double tercio = 1/3;
-        return tercio*Math.PI*this.getAltura()*(Math.pow(this.getCirculoBase().getRadio(), 2))
+        return this.getAltura()*Math.PI/3*(Math.pow(this.getCirculoBase().getRadio(), 2)+Math.pow(this.getCirculoMenor().getRadio(), 2)
+                +this.getCirculoBase().getRadio()*this.getCirculoMenor().getRadio());
     }
 
     

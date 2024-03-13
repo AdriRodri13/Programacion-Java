@@ -11,11 +11,11 @@ public class Cono extends CuerpoGeometricoCircular{
         super(color, altura, circuloBase, generatriz);
     }
     
-
     @Override
     public double area() {
         return this.getCirculoBase().calcularArea()+Math.PI*this.getCirculoBase().getRadio()*this.getGeneratriz();
     }
+    
 
     @Override
     public double volumen() {
