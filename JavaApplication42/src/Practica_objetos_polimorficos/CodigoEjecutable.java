@@ -35,12 +35,10 @@ public class CodigoEjecutable {
             n = menu.selecNuevoCuerpo();
             
             switch (n){
-                case(1) -> c = crearPrismaTriangular();
-                case(2) -> c = crearPrismaCuadrangular();
-                case(3) -> c = crearCilindroRecto();
-                case(4) -> c = crearCilindroOblicuo();
-                case(5) -> c = crearCono();
-                case(6) -> c = crearTroncoDeCono();
+                case 1,2 -> c = crearPrisma(n);
+                case 3,4 -> c = crearCilindro(n);
+                case 5 -> c = crearCono();
+                case 6 -> c = crearTroncoDeCono();
             }
             contador++;
         }while(n!=0 && contador == 0);
@@ -53,34 +51,29 @@ public class CodigoEjecutable {
         }
     }
     
-    public static PrismaRegularTriangular crearPrismaTriangular(){
-        System.out.println("\n=====Has decidido Crear un Prisma Regular Triangular=====");
-        PrismaRegularTriangular t = new PrismaRegularTriangular();
+    public static PrismaRegular crearPrisma(int n){
+        PrismaRegular t;
+        if(n == 1){
+            System.out.println("\n=====Has decidido Crear un Prisma Regular Triangular=====");
+             t = new PrismaRegularTriangular();
+        }else{
+            System.out.println("\n=====Has decidido Crear un Prisma Regular Cuadrangular=====");
+             t = new PrismaRegularCuadrangular();
+        }
         t.leer();
         return t;
     }
     
-    public static PrismaRegularCuadrangular crearPrismaCuadrangular(){
-        System.out.println("\n=====Has decidido Crear un Prisma Regular Cuadrangular=====");
-        PrismaRegularCuadrangular t = new PrismaRegularCuadrangular();
-        t.leer();
-        return t;
-    }
-    
-    public static CilindroRecto crearCilindroRecto(){
-        System.out.println("\n=====Has decidido Crear un Cilindro Recto=====");
-        CilindroRecto c = new CilindroRecto();
-        c.leer();
-        Circulo circuloBase = crearCirculo();
-        c.setCirculoBase(circuloBase);
-        c.setGeneratriz(leerGeneratriz(c.getAltura()));
+    public static Cilindro crearCilindro(int n){
+        Cilindro c;
+        if(n == 3){
+            System.out.println("\n=====Has decidido Crear un Cilindro Recto=====");
+            c = new CilindroRecto();
+        }else{
+            System.out.println("\n=====Has decidido Crear un Cilindro Oblicuo=====");
+            c = new CilindroOblicuo();
+        }
         
-        return c;
-    }
-    
-    public static CilindroOblicuo crearCilindroOblicuo(){
-        System.out.println("\n=====Has decidido Crear un Cilindro Oblicuo=====");
-        CilindroOblicuo c = new CilindroOblicuo();
         c.leer();
         Circulo circuloBase = crearCirculo();
         c.setCirculoBase(circuloBase);
