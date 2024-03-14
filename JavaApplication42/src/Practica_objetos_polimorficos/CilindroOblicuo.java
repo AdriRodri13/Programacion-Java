@@ -35,8 +35,8 @@ public class CilindroOblicuo extends Cilindro{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("Cilindro Oblicuo ");
         sb.append(super.toString());
-        sb.append("CilindroOblicuo: ");
         return sb.toString();
     }
 

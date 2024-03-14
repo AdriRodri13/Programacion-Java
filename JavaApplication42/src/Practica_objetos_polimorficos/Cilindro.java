@@ -27,7 +27,8 @@ public abstract class Cilindro extends CuerpoGeometricoCircular{
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
-        sb.append("Cilindro: ");
+        sb.append(" Area: ").append(String.format("%.2f", this.area()));
+        sb.append(" Volumen: ").append(String.format("%.2f", this.volumen()));
         return sb.toString();
     }
 

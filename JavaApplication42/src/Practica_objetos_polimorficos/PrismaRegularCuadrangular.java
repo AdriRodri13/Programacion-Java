@@ -13,20 +13,21 @@ public class PrismaRegularCuadrangular extends PrismaRegular{
     
     @Override
     public double area() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return 2*this.getLado()*(this.getLado()+2*this.getAltura());
     }
 
     @Override
     public double volumen() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return Math.pow(this.getLado(), 2)*this.getAltura();
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("Prisma Regular Cuadrangular");
         sb.append(super.toString());
-        sb.append("PrismaRegularCuadrangular");
         return sb.toString();
+        
     }
     
     

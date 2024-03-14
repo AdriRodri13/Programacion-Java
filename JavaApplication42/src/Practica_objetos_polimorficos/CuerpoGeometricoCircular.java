@@ -48,9 +48,8 @@ public abstract class CuerpoGeometricoCircular extends CuerpoGeometrico {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
-        sb.append("CuerpoGeometricoCircular: ");
-        sb.append("circuloBase: ").append(circuloBase);
-        sb.append(" generatriz: ").append(generatriz);
+        sb.append(" Radio circulo base: ").append(this.getCirculoBase().getRadio());
+        sb.append(" Generatriz: ").append(this.generatriz);
         return sb.toString();
     }
 

@@ -25,9 +25,10 @@ public class PrismaRegularTriangular extends PrismaRegular{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("Prisma Regular Triangular");
         sb.append(super.toString());
-        sb.append(" PrismaRegularTriangular ");
         return sb.toString();
+        
     }
     
     

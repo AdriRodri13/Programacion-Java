@@ -43,7 +43,8 @@ public class CilindroRecto extends Cilindro{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("CilindroRecto: ");
+        sb.append(" CilindroRecto ");
+        sb.append(super.toString());
         return sb.toString();
     }
     

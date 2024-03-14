@@ -5,7 +5,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 
-public abstract class CuerpoGeometrico {
+public abstract class CuerpoGeometrico implements Comparable <CuerpoGeometrico>{
     
     private Colores color;
     private double altura;
@@ -71,17 +71,7 @@ public abstract class CuerpoGeometrico {
             }
         }while(altura<0);
         
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("CuerpoGeometrico: ");
-        sb.append("color: ").append(color);
-        sb.append(" altura: ").append(altura);
-        return sb.toString();
-    }
-    
+    } 
     
     public abstract double area();
     
@@ -94,6 +84,16 @@ public abstract class CuerpoGeometrico {
         hash = 89 * hash + (int) (Double.doubleToLongBits(this.altura) ^ (Double.doubleToLongBits(this.altura) >>> 32));
         return hash;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(" Color ").append(this.color);
+        sb.append(" Altura: ").append(this.altura);
+        return sb.toString();
+    }
+    
+    
 
     @Override
     public boolean equals(Object obj) {
@@ -111,6 +111,11 @@ public abstract class CuerpoGeometrico {
             return false;
         }
         return this.color == other.color;
+    }
+
+    @Override
+    public int compareTo(CuerpoGeometrico o) {
+        return this.color.name().compareToIgnoreCase(o.getColor().name());
     }
 
     

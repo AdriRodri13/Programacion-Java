@@ -48,10 +48,14 @@ public abstract class PrismaRegular extends CuerpoGeometrico {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
-        sb.append("PrismaRegular: ");
-        sb.append("Tamaño del lado: ").append(lado);
+        sb.append(" Lado: ").append(this.getLado());
+        sb.append(" Area: ").append(String.format("%.2f", this.area()));
+        sb.append(" Volumen: ").append(String.format("%.2f", this.volumen()));
         return sb.toString();
     }
+
+    
+
 
     @Override
     public int hashCode() {

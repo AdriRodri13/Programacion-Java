@@ -38,9 +38,14 @@ public class TroncoDeCono extends Cono {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(super.toString());
-        sb.append("TroncoDeCono: ");
-        sb.append(" circuloMenor: ").append(circuloMenor);
+        sb.append("Tronco De Cono ");
+        sb.append("Color ").append(this.getColor());
+        sb.append(" Altura: ").append(this.getAltura());
+        sb.append("Radio del circulo base: ").append(this.getCirculoBase().getRadio());
+        sb.append(" Generatriz: ").append(this.getGeneratriz());
+        sb.append(" Radio del circulo menor: ").append(this.circuloMenor.getRadio());
+        sb.append(" Area: ").append(String.format("%.2f", this.area()));
+        sb.append(" Volumen: ").append(String.format("%.2f", this.volumen()));
         return sb.toString();
     }
 
