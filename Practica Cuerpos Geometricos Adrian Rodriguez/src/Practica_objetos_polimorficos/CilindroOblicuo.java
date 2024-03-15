@@ -17,10 +17,10 @@ public class CilindroOblicuo extends Cilindro{
     //La formula correcta es: 2*PI*R*(R+generatriz), no 2*PI*R*generatriz que es la que proporcionas, con esta formula
     //el resultado me da bien, con la tuya no (Obviamente es posible que yo lo tenga mal)
     
-//    @Override
-//     public double area(){
-//         return 2*Math.PI*this.getCirculoBase().getRadio()*this.getGeneratriz();
-//    }
+    //@Override
+    // public double area(){
+    //     return 2*Math.PI*this.getCirucloBase().getRadio()*this.getGeneratriz;
+    //}
     
     @Override
     public double area() {
