@@ -5,7 +5,6 @@ package Practica_objetos_polimorficos;
 //He decidido cambiarlas ya que algunas me resultaban mas comodas y el resultado es el mismo
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class CodigoEjecutable {
