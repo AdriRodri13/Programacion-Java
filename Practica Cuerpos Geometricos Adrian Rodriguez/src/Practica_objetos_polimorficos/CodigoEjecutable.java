@@ -157,11 +157,7 @@ public class CodigoEjecutable {
         c.leer();
         Circulo circuloBase = crearCirculo();
         c.setCirculoBase(circuloBase);
-        if(n==4){
-            c.leerGeneratriz(c.getAltura());
-        }else{
-            c.setGeneratriz(c.getAltura());
-        }
+        c.setGeneratriz(leerGeneratriz(c.getAltura()));
 
         return c;
     }
@@ -172,7 +168,7 @@ public class CodigoEjecutable {
         c.leer();
         Circulo circuloBase = crearCirculo();
         c.setCirculoBase(circuloBase);
-        c.leerGeneratriz(c.getAltura());
+        c.setGeneratriz(leerGeneratriz(c.getAltura()));
 
         return c;
     }
@@ -194,7 +190,7 @@ public class CodigoEjecutable {
 
         c.setCirculoBase(circuloBase);
         c.setCirculoMenor(circuloPequeño);
-        c.leerGeneratriz(c.getAltura());
+        c.setGeneratriz(leerGeneratriz(c.getAltura()));
 
         return c;
     }

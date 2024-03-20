@@ -12,6 +12,23 @@ public class CilindroRecto extends Cilindro{
         super(circuloBase, color, altura);
         this.setGeneratriz(altura);
     }
+
+    
+    //SobreEscribo estos metodos ya que quiero que si en algun momento el usuario cambia la altura o la generatriz
+    //del objetos, es importante que como el ejercicio indica se mantengan iguales, por eso mismo solo pido la altura
+    //en el constructor, para evitar que se generen objetos de este tipo con alturas y generatrices direrentes
+    
+    @Override
+    public void setGeneratriz(double generatriz) { 
+        super.setGeneratriz(generatriz); 
+        super.setAltura(generatriz);
+    }
+
+    @Override
+    public void setAltura(double altura) {
+        super.setAltura(altura);
+        super.setGeneratriz(altura);
+    }
     
     @Override
     public double area() {
@@ -26,7 +43,7 @@ public class CilindroRecto extends Cilindro{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Cilindro Recto ");
+        sb.append(" CilindroRecto ");
         sb.append(super.toString());
         return sb.toString();
     }
