@@ -98,22 +98,14 @@ public class TiendaDeMascotas {
                 System.out.print("-> ");
                 codigo = sc.nextInt();
                 for (int j = 0; j < i; j++) {
-                    if (tienda[i] instanceof Animal animal) {
-                        if (animal.getCodigo() == codigo) {
-                            repetido = true;
-                        }
+                    if (tienda[j] instanceof Animal animal) {
+                        repetido = animal.getCodigo() == codigo;
+                    }else if (tienda[j] instanceof Articulo articulo) {
+                        repetido = articulo.getCodigo() == codigo;
                     }
-
-                    if (tienda[i] instanceof Articulo articulo) {
-                        if (articulo.getCodigo() == codigo) {
-                            repetido = true;
-                        }
-                    }
-
+                    
                     if (repetido == true) {
                         System.out.println("El codigo ya existe, debes introducir otro");
-                    } else {
-                        repetido = false;
                     }
                 }
             } while (repetido);
